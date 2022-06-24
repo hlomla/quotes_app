@@ -18,10 +18,8 @@
       <button @click="checkToken()" type="submit" class="loginButton" name="action">Login</button>
       <button @click="registerUser()" type="submit" class="generateButton" name="action">Register</button>
 
-    </div>
-    <div x-data="{ show: false }">
-      <button @click="show=!show">Login</button>
-      <div x-show="show">
+      <div >
+      <div x-show="open">
         <div x-data="loveCounter ">
           <h1>Show some heart</h1>
           <div x-text="hearts()">
@@ -45,6 +43,7 @@
       </div>
     </div>
   </div>
+</div>
 </body>
 
 </html>
