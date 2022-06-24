@@ -5,16 +5,15 @@ export default function Login () {
 
     return {
         ...Register(),
-        logged:{
-            username: '',
-            password: ''
-        },
+        login_message:'',
+        open: false,
+
         checkToken() {
             axios
-            .post(`/api/login`, this.logged)
-            .then(this.logged === this.logged)
+            .post(`/api/login`, this.registerUser())
+            .then(r => this.registerUser())
             alert('loggeddd')
-            .then(userData => {
+            .then(() => {
                 console.log(userData);
                 this.registered = userData.data
                 this.login_message = 'Logged In!!!';
