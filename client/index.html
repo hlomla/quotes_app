@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div id="app">
+    <div x-data="login">
+      <label for="login">Please enter your username:</label>
+      <input type="text" x-model="register.username" id="login" name="login" class="text-input" value=""><br><br>      
+      <label for="login">Please enter your password:</label>
+      <input type="password" x-model="register.password" id="password" name="password" class="text-input" value=""><br><br>      
+      <button @click="checkToken()" type="submit" class="loginButton" name="action">Login</button>
+      <button @click="registerUser()" type="submit" class="generateButton" name="action">Register</button>
+
+    </div>
+    <div x-data="{ show: false }">
+      <button @click="show=!show">Login</button>
+      <div x-show="show">
+        <div x-data="loveCounter ">
+          <h1>Show some heart</h1>
+          <div x-text="hearts()">
+          </div>
+          <div>
+            <button @click="love">Show 💟</button><span x-text="loveCounter"></span>
+          </div>
+        </div>
+        <hr>
+        <div x-data="quoteApp" class="quote">
+          <h1>Quote App</h1>
+          <button @click="getQuote()">Next quote 📢</button>
+          <div class="quote">
+            <div x-text="quote.quote" class="content"></div>
+            <div>
+              <strong> By </strong><span x-text="quote.author"></span>
+            </div>
+          </div>
+        </div>
+        <script type="module" src="/main.js"></script>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
